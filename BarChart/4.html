@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bar Chart Step Four</title>
+</head>
+<body>
+
+<div class="mySvgContainer"></div>
+<a href="3.html">Step Three</a>
+<a href="5.html">Step Five</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script>
+  var height = 800,
+    width = 800;
+
+  var margin = {
+    top: 100,
+    right: 100,
+    bottom: 100,
+    left: 100
+  };
+
+  var chartHeight = height - margin.top - margin.bottom,
+    chartWidth = width - margin.left - margin.right,
+    chartX = margin.left,
+    chartY = margin.top,
+    barMarginPercent = 0.1;
+
+  var data = [
+    {'title': 'A', value: 100},
+    {'title': 'B', value: 200},
+    {'title': 'C', value: 300},
+    {'title': 'D', value: 100},
+    {'title': 'E', value: 200},
+    {'title': 'F', value: 500}
+  ];
+
+  var svg = d3.select('.mySvgContainer')
+    .append('svg')
+    .attr('height', height)
+    .attr('width', width);
+
+  var barChart = svg.append('g')
+    .attr('id', 'barChart')
+    .attr('transform', 'translate(' + chartX + ',' + chartY + ')');
+
+
+  var allBars = barChart.selectAll('rect.myBar')
+    .data(data);
+
+  // New Code
+  var maxValue = d3.max(data, function(d){
+    return d.value;
+  });
+
+  var xScale = d3.scale.linear()
+    .domain([0, maxValue])
+    .range([0, chartWidth]);
+
+  var barHeight = chartHeight / data.length;
+  var barMargin = barHeight * barMarginPercent;
+  barHeight -= barMargin;
+
+  // New Code
+
+  allBars.enter()
+    .append('rect')
+    .classed('myBar', true)
+    .attr({
+      x: 0,
+      y: function (d, i) {
+        return i * (barHeight + barMargin);
+      },
+      height: 75,
+      width: function (d){
+        return xScale(d.value);
+      }
+    })
+    .style('fill', 'steelblue');
+
+
+
+
+</script>
+</body>
+</html>

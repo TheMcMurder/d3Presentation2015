@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bar Chart Step One</title>
+</head>
+<body>
+
+  <div class="mySvgContainer"></div>
+  <a href="index.html">Go back</a>
+  <a href="2.html">Step Two</a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script>
+  var height = 800,
+    width = 800;
+
+  var margin = {
+    top: 100,
+    right: 100,
+    bottom: 100,
+    left: 100
+  };
+
+  var chartHeight = height - margin.top - margin.bottom,
+    chartWidth = width - margin.left - margin.right,
+    chartX = margin.left,
+    chartY = margin.top,
+    barMarginPercent = 0.1;
+
+  var data = [
+    {'title': "A", value: 100},
+    {'title': "B", value: 200},
+    {'title': "C", value: 300},
+    {'title': "D", value: 100},
+    {'title': "E", value: 200},
+    {'title': "F", value: 500}
+  ];
+
+</script>
+</body>
+</html>

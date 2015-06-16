@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bar Chart Step Two</title>
+</head>
+<body>
+
+<div class="mySvgContainer"></div>
+<a href="1.html">Step One</a>
+<a href="3.html">Step Three</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script>
+  var height = 800,
+    width = 800;
+
+  var margin = {
+    top: 100,
+    right: 100,
+    bottom: 100,
+    left: 100
+  };
+
+  var chartHeight = height - margin.top - margin.bottom,
+    chartWidth = width - margin.left - margin.right,
+    chartX = margin.left,
+    chartY = margin.top,
+    barMarginPercent = 0.1;
+
+  var data = [
+    {'title': 'A', value: 100},
+    {'title': 'B', value: 200},
+    {'title': 'C', value: 300},
+    {'title': 'D', value: 100},
+    {'title': 'E', value: 200},
+    {'title': 'F', value: 500}
+  ];
+
+  //NEW CODE
+  var svg = d3.select('.mySvgContainer')
+    .append('svg')
+    .attr('height', height)
+    .attr('width', width);
+
+  var barChart = svg.append('g')
+    .attr('id', 'barChart')
+    .attr('transform', 'translate(' + chartX + ',' + chartY + ')');
+
+  //END NEW CODE
+
+</script>
+</body>
+</html>
