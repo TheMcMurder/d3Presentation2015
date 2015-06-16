@@ -5,3 +5,4 @@ D3 enter / Exit / update examples:
 * [Old (no interactions)](http://goo.gl/I9mKSF)
 * [New (manual interaction)](http://goo.gl/dDLC9p)
 
+[Slides](https://slides.com/themcmurder/d3js2015/)
