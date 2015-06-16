@@ -19,9 +19,9 @@ var duration = 800;
 
 function enter() {
   //**********************************************************************************
-  // Enter: all pieces of data that do not have a node to bind to. In this case where
-  // there are already three circles ('nodes') there would have to be more than 3
-  // data points in our dataset to have enter run at all;
+  // Enter: all pieces of data that do not have a node to bind to.
+  // If there are already circles ('nodes') there would have to be more
+  // data points than nodes in our dataset to have enter run at all;
   //**********************************************************************************
   refreshArray();
   circleArray.enter()
@@ -30,10 +30,11 @@ function enter() {
     .attr("cy", function(d, i){
       return (i + 1)*100
     })
-    .attr("r", 30)
     .attr("fill", "#78AB46")
+    .attr('r', 0)
     .transition()
-    .duration(duration);
+    .duration(duration)
+    .attr("r", 30);
 
   refreshArray();
 }
@@ -92,6 +93,7 @@ function bindData(data){
 
 function removeAll() {
   svg.selectAll("circle").remove();
+  refreshArray();
 }
 
 function refreshArray() {
