@@ -1,38 +1,12 @@
 # ide files
 .idea
 
-# dependencies
-node_modules
-app/bower_components
 
 # custom files
 **/*.ignored.*
 **/*.ignored/**
 
-# generated files
-dist
-
-### Vim ###
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
 
 
 # other
-npm-debug.log
 .DS_Store
-*.orig
-
-app/bundle.js
-
-app/scripts/server_config.js
-
-app/res
-
-npm-debug.log*
-
-coverage
-nohup.out

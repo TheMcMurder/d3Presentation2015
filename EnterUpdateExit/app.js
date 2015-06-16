@@ -71,7 +71,7 @@ function exit() {
 }
 
 function changeData() {
-  var random = ((Math.random() * 10) + 1);
+  var random = ((Math.random() * 8) + 1);
   data = [];
   for (var i = 0; i < random; i++) {
     data.push(Math.floor((Math.random() * 45) + 10))
