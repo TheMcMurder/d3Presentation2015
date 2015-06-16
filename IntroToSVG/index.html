@@ -20,33 +20,33 @@
         .attr('height', 500)
         .attr('width', 500)
         .style('fill', 'steelblue');
-
-      var g = svg.append('g')
-        .attr({
-          transform: 'translate(200,200)'
-        });
-
-      var pulsingRect = g.append('rect')
-        .attr({
-          height: 100,
-          width: 100,
-          'stroke-width': 0
-        })
-        .style('fill', '#e4e5e5')
-        .style('stroke', '#FF9C5B');
-
-
-      var interval = setInterval(function (){
-        pulse();
-      }, 500);
-
-
-      function pulse() {
-        pulsingRect
-          .transition()
-          .duration(250)
-          .attr('stroke-width', ((Math.random() * 75) + 1));
-      }
+//
+//      var g = svg.append('g')
+//        .attr({
+//          transform: 'translate(200,200)'
+//        });
+//
+//      var pulsingRect = g.append('rect')
+//        .attr({
+//          height: 100,
+//          width: 100,
+//          'stroke-width': 0
+//        })
+//        .style('fill', '#e4e5e5')
+//        .style('stroke', '#FF9C5B');
+//
+//
+//      var interval = setInterval(function (){
+//        pulse();
+//      }, 500);
+//
+//
+//      function pulse() {
+//        pulsingRect
+//          .transition()
+//          .duration(250)
+//          .attr('stroke-width', ((Math.random() * 75) + 1));
+//      }
 
 
     </script>
