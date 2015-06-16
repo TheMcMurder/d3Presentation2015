@@ -1,6 +1,7 @@
 
 var data =[45, 10];
 
+init();
 
 
 //creating the svg so I can draw objects on it
@@ -79,7 +80,7 @@ function changeData() {
     data.push(Math.floor((Math.random() * 45) + 10))
   }
 
-  document.querySelectorAll('span')[0].innerHTML = data;
+  displayData(data);
   bindData(data);
 
 }
@@ -97,5 +98,12 @@ function refreshArray() {
   bindData(data);
 }
 
+function init() {
+  displayData(data);
+}
+
+function displayData(data){
+  document.querySelectorAll('span')[0].innerHTML = data;
+}
 
 
