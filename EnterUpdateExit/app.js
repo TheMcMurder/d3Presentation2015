@@ -99,27 +99,3 @@ function refreshArray() {
 
 
 
-function createCirclesNotBound () {
-  //creating initial circle objects
-  var circle1 = svg.append("circle")
-    .attr("cx", 100)
-    .attr("cy", 100)
-    .attr("r", 25);
-
-// another circle object
-  var circle2 = svg.append("circle")
-    .attr("cx", 100)
-    .attr("cy", 200)
-    .attr("r", 25);
-
-
-// another circle object
-  var circle3 = svg.append("circle")
-    .attr("cx", 100)
-    .attr("cy", 300)
-    .attr("r", 25);
-
-}
-
-
-
