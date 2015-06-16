@@ -28,7 +28,7 @@ function enter() {
     .append("circle")
     .attr("cx", 100)
     .attr("cy", function(d, i){
-      return (i + 1)*100
+      return (i + 1)*100;
     })
     .attr("fill", "#78AB46")
     .attr('r', 0)
@@ -78,7 +78,7 @@ function changeData() {
   var random = ((Math.random() * 8) + 1);
   data = [];
   for (var i = 0; i < random; i++) {
-    data.push(Math.floor((Math.random() * 45) + 10))
+    data.push(Math.floor((Math.random() * 45) + 10));
   }
 
   displayData(data);
