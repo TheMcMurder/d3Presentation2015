@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to SVG and D3js</title>
+  </head>
+  <body>
+
+    <svg></svg>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+    <script>
+      // All the fun stuff goes here
+
+      var svg = d3.select('svg');
+
+      svg.attr('height', 500)
+        .attr('width', 500);
+
+      svg.append('rect')
+        .attr('height', 500)
+        .attr('width', 500)
+        .style('fill', 'steelblue');
+
+      var g = svg.append('g')
+        .attr({
+          transform: 'translate(200,200)'
+        });
+
+      var pulsingRect = g.append('rect')
+        .attr({
+          height: 100,
+          width: 100,
+          'stroke-width': 0
+        })
+        .style('fill', '#e4e5e5')
+        .style('stroke', '#FF9C5B');
+
+
+      var interval = setInterval(function (){
+        pulse();
+      }, 500);
+
+
+      function pulse() {
+        pulsingRect
+          .transition()
+          .duration(250)
+          .attr('stroke-width', ((Math.random() * 75) + 1));
+      }
+
+
+    </script>
+
+  </body>
+</html>
