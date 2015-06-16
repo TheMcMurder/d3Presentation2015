@@ -22,6 +22,7 @@ function enter() {
   // there are already three circles ('nodes') there would have to be more than 3
   // data points in our dataset to have enter run at all;
   //**********************************************************************************
+  refreshArray();
   circleArray.enter()
     .append("circle")
     .attr("cx", 100)
@@ -41,7 +42,7 @@ function update() {
   // Update: Every node that is bound to data, in this case that is everything we've
   // entered and everything that has just been bound from the .data(data) bind.
   //**********************************************************************************
-
+  refreshArray();
   circleArray
     .transition()
     .duration(duration)
@@ -58,6 +59,7 @@ function exit() {
   // Exit: Every node ('circles') that exists in your selection that you don't have
   // bound data to
   //**********************************************************************************
+  refreshArray();
   circleArray.exit()
     .transition().duration(duration)
     .style("fill", "red")
