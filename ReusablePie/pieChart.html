@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Sample</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<div>
+  PieChart.html
+
+
+  <div id="chart">
+    <svg height='700' width ='1100'></svg>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+
+
+  <script type="text/javascript" src ='d3PieChart.js'></script>
+  <script charset="utf-8" type ='text/javascript'>
+
+
+
+    var sampleData = [
+      {'color': '#7AEBF5', 'name': 'abc', 'value': 50},
+      {'color': '#7ACEF5', 'name': '234', 'value': 90},
+      {'color': '#7ABAF5', 'name': '43g', 'value': 80},
+      {'color': '#7AA6F5', 'name': 'sdf', 'value': 40},
+      {'color': '#7A98F5', 'name': 'dfga', 'value': 70}
+    ];
+
+    var sampleData2 = [
+      {'color': '#7AEBF5', 'name': 'abc', 'value': 10},
+      {'color': '#7ACEF5', 'name': '234', 'value': 80},
+      {'color': '#7ABAF5', 'name': '43g', 'value': 70},
+      {'color': '#7AA6F5', 'name': 'sdf', 'value': 550},
+      {'color': '#7A98F5', 'name': 'dfga', 'value': 50}
+    ];
+
+    var transTime = 1500;
+    var chart = pieChart()
+      .width(900)
+      .height(400)
+      .transitions(transTime);
+
+    d3.select('#chart svg')
+      .datum(sampleData)
+      .call(chart);
+
+    setTimeout(function (){
+      console.log('chartUpdate');
+
+      d3.select('#chart svg')
+        .datum(sampleData2)
+        .call(chart);
+    }, transTime + 1000);
+
+
+
+
+
+
+  </script>
+
+</div>
+</body>
+</html>
